@@ -45,20 +45,24 @@
         //  input 엘리먼트에 입력되어 있는 값들은 초기화
         var pn = document.querySelector('#pno');
         var pna = document.querySelector('#pname');
+        var pri = document.querySelector('#price');
         var sav = document.querySelector('#save');
-        
-
+        var tbo = document.querySelector('#prods');
+        var pn = p.no;
+        var pna = p.name;
+        var pri = p.price;
         sav.onclick = function() {
 
-            prodList.push(pn,pna);
+            prodList.push(p.no, p.name, p.price);
+            tbo.innerHTML='';
+            for (var i = 0 ; i < prodList.length ; i++){
+            var p = prodList[i];
+            tbo.innerHTML += '<tr>'+'<td>'+p.no+'</td>'+'<td>'+p.name+'</td>'+'<td>'+p.price+'</td>'+'</tr>';    
+        }
         };
         
 
-             for (var i = 0 ; i < prodList.length ; i++){
-             var p = prodList[i];
-
-             tbo.innerHTML += '<tr>'+'<td>'+p.no+'</td>'+'<td>'+p.name+'</td>'+'<td>'+p.price+'</td>'+'</tr>';    
-        }
+             
 
         
 
