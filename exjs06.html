@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS ARRAY EX</title>
+    <style>
+        td, th{
+            border: 1px solid black;
+        }
+        table{
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <table>
         <caption>상품목록</caption>
         <thead><th>상품번호</th><th>상품명</th><th>가격</th></thead>
-        <tbody id="prods"></tbody>
+        <tbody id="prods">
+
+        </tbody>
         <tfoot><td colspan="3">상품번호:<input type="text" id="pno" /> 상품명:<input type="text" id="pname" />가격:<input type="text" id="price" /><button id="save">저장</button></td></tfoot>
     </table>
     <script>
@@ -22,10 +33,35 @@
         prodList.push( { no: 3, name: "사또밥", price: 800 } );
 
         //1. 현재 prodList 에 저장되어 있는 상품들의 정보를 상품목록 테이블의 tbody에 출력
+        var tbo = document.querySelector('#prods');
+        
+        for (var i = 0 ; i < prodList.length ; i++){
+            var p = prodList[i];
+            tbo.innerHTML += '<tr>'+'<td>'+p.no+'</td>'+'<td>'+p.name+'</td>'+'<td>'+p.price+'</td>'+'</tr>';    
+        }
         
         //2. 저장 버튼을 클릭하면, 입력한 상품 정보를 prodList 에 추가하고,
         //  prodList 에 저장되어 있는 상품들의 정보를 상품목록 테이블의 tbody에 다시 출력
         //  input 엘리먼트에 입력되어 있는 값들은 초기화
+        var pn = document.querySelector('#pno');
+        var pna = document.querySelector('#pname');
+        var sav = document.querySelector('#save');
+        
+
+        sav.onclick = function() {
+
+            prodList.push(pn,pna);
+        };
+        
+
+             for (var i = 0 ; i < prodList.length ; i++){
+             var p = prodList[i];
+
+             tbo.innerHTML += '<tr>'+'<td>'+p.no+'</td>'+'<td>'+p.name+'</td>'+'<td>'+p.price+'</td>'+'</tr>';    
+        }
+
+        
+
 
     </script>
 </body>
