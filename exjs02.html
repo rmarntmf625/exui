@@ -24,6 +24,26 @@
             <option value="12">12</option>        
         </select> 월
         <button id="btn2">계절</button>계절 : <span id="seasoe"></span>
+        <!-- 추가된 것 -->
+        <h1>3</h1>
+    <div><input type="text" id="start" />부터 <input type="text" id="end" />까지의 <button id="sumBtn">합</button>은 <span id="sum"></span></div>
+    <h1>4</h1>
+    <div><input type="text" id="num" />를 <button id="addBtn">더하면</button> 총합은 <input type="text" id="total" /><button id="reset">초기화</button></div>
+    <h1>5</h1>
+    <div>
+        <select id="dan">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select> 단까지 <button id="outBtn">구구단 출력</button>
+        <div id="out"></div>
+    </div>
+        <!-- 기존의 것 -->
         <script>
         // 1.점수를 입력받아서 60-100 이면 통과, 0~59면 실패, 나머지는 유효하지 않은 점수라고 출력
         var sco = document.querySelector('#score')
@@ -43,11 +63,15 @@
 
         // 2.월을 입력받아서 계절을 출력 (3-5 봄, 6-8여름, 9-11가을, 나머지 겨울)
 
-        // 3.정수를 입력받아서 1부터 그 숫자까지의 합을 출력
-
-        // 4.시작 정수와 끝 정수를 입력받아서 그 범위의 정수들의 합을 출력
+        // 3.input 엘리먼트들에 시작 정수와 끝 정수를 입력하고, 합 버튼을 클릭하면, 그 범위의 정수들의 합을 출력
         
-        // 5.사용자로부터 숫자를 계속 입력받아서 입력받은 숫자의 총합을 출력
+        // 4. - 맨 처음에는 총합 값을 0으로 출력하고, 키보드 입력으로는 변경할 수 없도록 설정
+        //    - '더하면' 버튼을 클릭할 때마다, input 에 입력되어 있는 수를 현재 총합 값에 더해서 새로운 총합 값으로 출력
+        //    - '초기화' 버튼 클릭시, 총합 값을 다시 0으로 출력
+        //    - 숫자가 아닌 값을 입력한 경우, 총합에 더하지 않고 "숫자가 아닌 것을 입력했다"는 경고 메시지를 출력(alert)하고, input 엘리먼트를 초기화
+        
+        // 5.구구단을 테이블 형태로 출력
+        //  select 에서 단 수를 선택하고, 구구단 출력 버튼을 클릭하면, 선택한 단까지 구구단을 테이블로 생성하여 id가 out인 div 안에 출력
         //  취소버튼 클릭시, 초기화
         //  숫자가 아닌 문자열 입력시 : 덧셈을 하지 않고 "숫자가 아닌 것을 입력했다"는 메시지를 출력
         
