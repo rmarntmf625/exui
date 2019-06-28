@@ -28,10 +28,41 @@
     <script>
         // 1. id 가 product 인 div 안에 있는 img 엘리먼트 클릭하면, 
         //  클릭한 img 엘리먼트와 동일한 엘리먼트를 id 가 cart 인 div 에 추가
+        var imgcar = document.querySelector('#cart');
+        var imgpro = document.querySelectorAll('#product img');
         
+        for(var i = 0; i< imgpro.length; i++){
+            var p = imgpro[i];
+            p.onclick = function(){
+                // alert('상품클릭');
+                // imgcar.innerHTML += '<img src="'+this.src+'" />';
+                var newImg = document.createElement('img');
+                newImg.src = this.src;
+                imgcar.appendChild(newImg);
+                // newImg.onclick = function(){
+                //     this.parentElement.removeChild(this);
+                // }
+            }
+        }
 
         // 2. id 가 cart 인 div 안에 있는 img 엘리먼트 클릭하면, 
         //  클릭한 img 엘리먼트를 삭제
+        var imgList = document.querySelectorAll('#cart img');
+
+        imgcar.onclick = function(ev){
+            // alert('장바구나 클릭');
+            //console.log(this);//cartDiv 엘리먼트
+            //console.log(ev.currentTargrt); //cartDiv 엘리먼트
+            console.log(ev.target);//클릭된 img 엘리먼트
+            if(ev.target.nodeName ==='IMG'){
+                ev.target.parentElement.removeChild(ev.target);
+
+            }
+            //클릭된img엘리먼트의 부모 엘리먼트.removeChild(클릭된img엘리먼트);
+            // ev.target.parentElement.removeChild(ev.target);
+            // cartDiv.removeChild(ev.target);
+        };
+
     </script>
 </body>
 </html>
