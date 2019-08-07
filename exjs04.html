@@ -40,10 +40,9 @@
             //this == 현재 이 함수(메서드)가 속해있는 객체
             this.speed = this.speed + 10;
         };
-        car.brake = function(){
+        car.brake = function() {
             this.speed = this.speed - 10;
-        }
-
+        };
         console.log( car.speed );
         car.accel(); //속도가 10 증가
         console.log( car.speed );

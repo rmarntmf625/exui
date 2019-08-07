@@ -11,25 +11,32 @@
             /* 블럭엘리먼트는 float 된 엘리먼트 밑으로 깔려서 배치될 수 있지만, */
             /* 블럭엘리먼트 내부의 텍스트나 인라인엘리먼트는 float된 엘리먼트를 피해서 배치된다 */
             /* clear : 현재 엘리먼트의 왼쪽 또는 오른쪽 또는 양쪽모두에 float된 엘리먼트가 없을 때까지 아래로 내려가서 배치 */
+            float: right;
         }
 
         /* 고정폭 레이아웃 구현 */
         /* inline-block, float, margin, clear */
         .container {
             width: 1080px;
-            margin: 0px auto 0px auto;
-        }
-        #header{
+            /* margin: 0px auto 0px auto;  */
+            margin: 0px auto;
+        } 
+        #header {
             background-color: green;
         }
-        #aside{
-            background-color: blueviolet;
+        #aside {
+            background-color: brown;
+            width: 300px;
+            float: left;
         }
-        #content{
-            background-color: aquamarine;
+        #content {
+            background-color: yellow;
+            width: 780px;
+            margin-left: 300px;
         }
-        #footer{
-            background-color: gold;
+        #footer {
+            background-color: steelblue;
+            clear: left;
         }
     </style>
 </head>
@@ -44,6 +51,12 @@
                 <li>메뉴03</li>
                 <li>메뉴04</li>
                 <li>메뉴05</li>
+                <li>메뉴05</li>
+                <li>메뉴05</li>
+                <li>메뉴05</li>
+                <li>메뉴05</li>
+                <li>메뉴05</li>
+                <li>메뉴05</li>
             </ul>
         </div>
         <div id="content">
@@ -55,7 +68,7 @@
             빙수야 팥~빙수야 녹지마 녹~지마 빙수야 팥~빙수야 싸랑해 싸~랑해 빙수야 팥~빙수야 녹지마 녹~지마 야 빙수야 팥~빙수야 싸랑해 싸~랑해 빙수야 팥~빙수야 녹지마 녹~지마
             난 나나 나~ 난나 나  나난나 난난나 나나나나 나~ 난나 나 나난나 난난나 빙수야 팥~빙수야 싸랑해 싸랑해 빙수야 팥~빙수야 녹지마 녹~지마 야 빙수야 팥~빙수야 싸랑해 싸랑해
         </div>
-        <div id="footer">하단 부터</div>
+        <div id="footer">하단 푸터</div>
     </div>
 
     <img src="img/ball.png" alt="공" />
